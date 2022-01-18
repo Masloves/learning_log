@@ -20,4 +20,4 @@ def register(request):
 
     # Вывести пустую или не действительную форму.
     context = {'form': form}
-    return render(request, 'users/register.html', context)
+    return render(request, 'registration/register.html', context)
