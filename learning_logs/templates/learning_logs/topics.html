@@ -5,16 +5,19 @@
 {% endblock page_header %}
 
 {% block content %}
+<p>
+  <h3><a class="btn rounded-pill btn-outline-success" href="{% url 'learning_logs:new_topic' %}">Add a new topic:</a></h3>
+</p>
   <ul>
       {% for topic in topics %}
-        <li>
-          <h3>
-            <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
-          </h3>
-        </li>
+    <div class="card mb-1">
+        <h4 class="card-header">
+            <a class="text-decoration-none font-monospace link-dark" href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+        </h4>
+    </div>
+
       {% empty %}
         <li><h3>No topics have been added yet.</h3></li>
       {% endfor %}
   </ul>
-  <h3><a href="{% url 'learning_logs:new_topic' %}">Add a new topic:</a></h3>
 {% endblock content %}
